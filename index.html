@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Bình Chọn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        .contestant {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bình chọn thí sinh Rap Việt</h1>
+
+    <div class="contestant">
+        <img src="thí_sinh_1.jpg" alt="Thí sinh 1" width="200">
+        <h3>Thí Sinh 1</h3>
+        <button onclick="vote('Thí Sinh 1')">Bình Chọn</button>
+    </div>
+
+    <div class="contestant">
+        <img src="thí_sinh_2.jpg" alt="Thí sinh 2" width="200">
+        <h3>Thí Sinh 2</h3>
+        <button onclick="vote('Thí Sinh 2')">Bình Chọn</button>
+    </div>
+
+    <p id="result"></p>
+
+    <script>
+        function vote(candidate) {
+            document.getElementById('result').innerText = `Bạn đã bình chọn cho: ${candidate}`;
+            alert(`Cảm ơn bạn đã bình chọn cho ${candidate}!`);
+        }
+    </script>
+</body>
+</html>
