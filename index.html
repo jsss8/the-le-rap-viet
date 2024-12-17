@@ -7,56 +7,76 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
             text-align: center;
-            background-color: #f4f4f9;
             margin: 0;
-            padding: 0;
+            padding: 20px;
         }
         h1 {
             color: #333;
         }
-        .contestant {
-            display: inline-block;
-            margin: 20px;
-            padding: 10px;
+        .rules {
+            margin: 20px auto;
+            padding: 15px;
             border: 1px solid #ccc;
             background-color: #fff;
             border-radius: 5px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .copy-link {
+            margin: 20px;
+        }
+        textarea {
+            width: 80%;
+            height: 50px;
+            font-size: 16px;
+            margin-bottom: 10px;
         }
         button {
             padding: 10px 15px;
-            background-color: #28a745;
-            color: #fff;
+            background-color: #007bff;
+            color: white;
             border: none;
-            cursor: pointer;
             border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
         }
         button:hover {
-            background-color: #218838;
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <h1>Bình chọn thí sinh Rap Việt</h1>
-
-    <div class="contestant">
-        <img src="thí_sinh_1.jpg" alt="Thí sinh 1" width="200">
-        <h3>Thí Sinh 1</h3>
-        <button onclick="vote('Thí Sinh 1')">Bình Chọn</button>
+    <h1>Bình Chọn Thí Sinh Yêu Thích</h1>
+    <div class="rules">
+        <h2>Thể Lệ Bình Chọn</h2>
+        <p>100% từ bình chọn của khán giả cả nước thông qua ứng dụng VieON thuộc nhà tài trợ độc quyền **Spacespeaker**.</p>
+        <p>Chỉ được vote <strong>1 lần duy nhất</strong> cho thí sinh yêu thích của bạn.</p>
+        <p>Đối tượng tham gia: <strong>12A2</strong>.</p>
+        <p><em>Nếu phát hiện gian lận, thí sinh của đội đó sẽ bị loại ngay lập tức!</em></p>
     </div>
 
-    <div class="contestant">
-        <img src="thí_sinh_2.jpg" alt="Thí sinh 2" width="200">
-        <h3>Thí Sinh 2</h3>
-        <button onclick="vote('Thí Sinh 2')">Bình Chọn</button>
+    <div class="copy-link">
+        <h3>Chia Sẻ Liên Kết Bình Chọn</h3>
+        <p>Copy đoạn văn bản dưới đây và gửi cho bạn bè:</p>
+        <textarea id="copyText">Xem thể lệ bình chọn tại: https://yourwebsite.com</textarea>
+        <br>
+        <button onclick="copyLink()">Sao Chép Liên Kết</button>
     </div>
-
-    <p id="result"></p>
 
     <script>
-        function vote(candidate) {
-            document.getElementById('result').innerText = `Bạn đã bình chọn cho: ${candidate}`;
-            alert(`Cảm ơn bạn đã bình chọn cho ${candidate}!`);
+        function copyLink() {
+            const textArea = document.getElementById('copyText');
+            textArea.select();
+            document.execCommand('copy');
+            alert('Liên kết đã được sao chép!');
         }
     </script>
 </body>
